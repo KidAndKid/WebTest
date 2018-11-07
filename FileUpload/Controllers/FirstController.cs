@@ -23,6 +23,11 @@ namespace FileUpload.Controllers
 
         }
 
+        public ActionResult TestAction()
+        {
+            return View();
+        }
+
         /// <summary>
         /// 重载
         /// </summary>
