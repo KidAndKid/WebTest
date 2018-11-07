@@ -1,0 +1,1059 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4345EA56-7810-4AE9-8B6F-898E90106C7D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LamaConsole</RootNamespace>
+    <AssemblyName>LamaConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="YskJData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>YskJData.Context.cs</LastGenOutput>
+      <DependentUpon>YskJData.edmx</DependentUpon>
+    </Content>
+    <Content Include="YskJData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>YskJData.edmx</DependentUpon>
+      <LastGenOutput>YskJData.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActionLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Activity.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityBanner.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Address.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnniversaryFootprintRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnniversaryFootprintRetryRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Archive.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleType.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoChangeImgSetting.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Banner.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BlackBoxCodeMap.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessOrderMapping.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessOrderMapping_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoinExchangePromotion.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoinExchangePromotionProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoinExchangeRateConfig.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoinExchangeRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComboboxDic.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompensationReportItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CouponBrand.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CouponProductTag.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseBanner.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseClockRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseHomeModule.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseHomeTab.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseModule.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseOrder.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseRowArea.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseSpokesman.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseUser.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseUserVoice.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseVisitLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAddress.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerBonu.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTree.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailyProductBonu.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataDeletedInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayQuota.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Docket.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocketProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpActionLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpActionLogArchive.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpOrder.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpOrderItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpOrderItem_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpOrderShip.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpOrderShipItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpOrderShipItem_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpOrderShip_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpOrder_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpProductSku.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExcludedPromotionProductAddStock.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpediteShipmentsRemind.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gift.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftOrder.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftOrderItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftOrderRefundRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GroupProductItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupPurchase.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupPurchaseOrder.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupPurchaseOrderItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupPurchasePayment.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupPurchaseProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupPurchasePromotionProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupPurchaseRefundFailLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="History_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeActivity.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeContentLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeCoupon.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomePromotion.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeTab.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeTimeLimitedPromotion.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeDetail.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IntegralRewardsPic.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IntegralRewardsRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IntegralRewardsRemit.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IntegralRewardsType.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lama.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaApproved.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaCustomerServiceLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaGroup.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaGroupChatDataStat.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaGroupItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaLevel.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaMateria.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaMateriaPic.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaModifyLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaMonthSale.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaOrderRefund.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaOrderRefundSku.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaReplenishApply.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaStorePayment.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LamaTicket.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LimitedTimePresentPoint.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LimitedTimeStorePic.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LimitedTimeStorePicLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginHistory.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiniAppCoreVisitInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiniAppMinuteVisitInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MonthQuota.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MonthSaleAmountGrowthRateStat.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewDailyQuota.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpenShopMentor.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderHistory.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItemScene.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItem_2017.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderManyData.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderPushLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSkuReplaceRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersPaymentOperation.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatu.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orders_2017.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentStatu.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_2017.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Picture.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PointDocket.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PointDocketProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PointHistory.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PointPromotion.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PreBrand.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PreBrandAuditLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PreProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PreProductAuditLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PreProductSpec.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prize.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrizeDraw.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrizeDrawItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrizeDrawLevel.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrizeDrawRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrizeDrawTime.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrizeFlyingChessStepRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductAppInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBasicPrice.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBasicPriceLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBonusConfig.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCostGrossViewAuth.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetailTemp.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDisableLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductEditHistory.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductKeyword.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductLevel.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPoint.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPrice.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPriceLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPromotionBasicPrice.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductRecommend.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductRelationSku.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductRelativityInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSaleWxPush.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSku.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSkuPriceForLamaLevel.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSpec.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSupplierModifyLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTag.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTagMap.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Promotion.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionDailyQuota.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionDefaultQuota.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionSchedule.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionScheduleLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionScheduleProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionScheduleProductAudit.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionTag.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionTagGroup.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionTimeLimitedProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionUsage.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinceFee.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasePlu.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasePlusDetail.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasePlusItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasePlusProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QrCodeShare.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionnaireRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RankAccount.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RankActivity.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RankActivityBrand.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RankVirtual.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefAndTag.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefCodeDailyFansNum.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Referrer.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReferrerModifyLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefRelation.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefTag.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefTagGroup.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RticleType.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAfter.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAfterApply.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAfterApplyItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAfterApplyReply.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAfterCouponCompensate.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAfterModifyLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAfterRefund.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAfterSku.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleProductTopSku.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleReduction.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleReductionConfig.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleReductionOrderRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleReductionProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPerformanceStatistic.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPerformanceStatistics_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SendMsgLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ship.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipCompany.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipItem_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingFeeTemplete.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingFeeTempleteModifyLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ship_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkuErpMapping.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkuPerformanceRatio.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkuSupplierMapping.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Spec.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecSignRule.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecsOption.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreSku.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierBillingCycle.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierBillingInfoEditLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierBrandMapping.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierCertificate.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierCertificateAuditLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierCertificateAuditRecord.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierCompensation.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierCompensationLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierCompensationSku.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierContractLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierContractNo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierDockingInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierEditProduct.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierEditProductAuditLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierOrder.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierOrderItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierOrderItem_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierOrderMapping.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierOrderMapping_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierOrderPullErrInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierOrderPushFail.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierOrder_bak.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierRefundAddress.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierReport.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierReportBill.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierReportCreateError.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierReportItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierShippingFeeConfig.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierShippingFeeConfigLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierShippingFeeHistory.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierShippingFeeTemplete.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierUserMapping.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierWarehouseMapping.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabModule.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TagGroup.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskCenter.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimingProudctPutawayTask.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Topic.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TopicGroup.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TopicProduc.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TopicPromotion.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TopicTab.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tutor.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TutorPromotionDailyQuota.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TutorPromotionDefaultQuota.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TutorPromotionDefaultQuotaItem.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TutorReceivedTicket.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UploadSupplierOrderShippingErrerInfo.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserContractLog.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserLevelCode.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeChatPublic.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeixinConfig.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Withdraw.cs">
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YskJData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YskJData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YskJData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YskJData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YskJData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YskJData.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <EntityDeploy Include="YskJData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>YskJData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="YskJData.edmx.diagram">
+      <DependentUpon>YskJData.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55369</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55369/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

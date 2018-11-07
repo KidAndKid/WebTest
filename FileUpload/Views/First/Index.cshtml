@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@{Html.BeginForm("action", "control", FormMethod.Post, new { @class = "class1", id = "dataform" });}
+@{Html.EndForm();}
+
+@using (Ajax.BeginForm("ShowView", "First", new { }, new AjaxOptions
+{
+    HttpMethod = "Post",
+    UpdateTargetId = "showViewDiv",
+    LoadingElementId = "wait",
+    LoadingElementDuration = 1000,
+    OnSuccess = "OnSuccessFunc"
+}, new { id = "ShowViewForm", name = "ShowViewForm" }))
+{
+
+    <input type="submit" id="logOnBtn" value="登陆" />
+}
+<input type="button" id="logOnBtn" value="提交" onclick="myfunction()" />
+<div id="wait" style="display:none">
+    耐心等待会...
+
+</div>
+<div id="showViewDiv">
+
+</div>
+<div id="showViewDiv2">
+    <iframe src="/First/ShowView" frameborder="0"></iframe>
+</div>
+<div id="showViewDiv3">
+
+</div>
+<div>
+    @{ Html.RenderPartial("partialView1");}
+</div>
+<div>
+    @{ Html.RenderAction("ShowView");}
+    
+</div>
+<div>
+    @{
+        string MyString = "My Simple String";
+    }
+    @MyString;
+    @MvcHtmlString.Create(MyString);
+</div>
+<div>
+    @Html.Action("ShowView")
+</div>
+<script>
+    $(function () {
+        $("#showViewDiv3").load('@Url.Action("ShowView", "First")')
+    });
+    function OnSuccessFunc(data) {
+        debugger;
+    }
+    //异步请求返回页面
+    function myfunction() {
+        $.post("/First/ShowView", function (data) {
+            debugger;
+            $("#showViewDiv").html(data);
+        });
+    }
+</script>
+
+
+

@@ -1,0 +1,7 @@
+C:\Users\EDZ\Documents\我的坚果云\Code\Project\WebTest\SelectMany\bin\Debug\SelectMany.exe.config
+C:\Users\EDZ\Documents\我的坚果云\Code\Project\WebTest\SelectMany\bin\Debug\SelectMany.exe
+C:\Users\EDZ\Documents\我的坚果云\Code\Project\WebTest\SelectMany\bin\Debug\SelectMany.pdb
+C:\Users\EDZ\Documents\我的坚果云\Code\Project\WebTest\SelectMany\obj\Debug\SelectMany.csprojAssemblyReference.cache
+C:\Users\EDZ\Documents\我的坚果云\Code\Project\WebTest\SelectMany\obj\Debug\SelectMany.csproj.CoreCompileInputs.cache
+C:\Users\EDZ\Documents\我的坚果云\Code\Project\WebTest\SelectMany\obj\Debug\SelectMany.exe
+C:\Users\EDZ\Documents\我的坚果云\Code\Project\WebTest\SelectMany\obj\Debug\SelectMany.pdb
