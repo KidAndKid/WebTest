@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUpload", "FileUpload\FileUpload.csproj", "{7B4AB13E-F335-4F75-80C7-613628742B2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamaConsole", "LamaConsole\LamaConsole.csproj", "{4345EA56-7810-4AE9-8B6F-898E90106C7D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{7B4AB13E-F335-4F75-80C7-613628742B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B4AB13E-F335-4F75-80C7-613628742B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B4AB13E-F335-4F75-80C7-613628742B2C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4345EA56-7810-4AE9-8B6F-898E90106C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4345EA56-7810-4AE9-8B6F-898E90106C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4345EA56-7810-4AE9-8B6F-898E90106C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4345EA56-7810-4AE9-8B6F-898E90106C7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
