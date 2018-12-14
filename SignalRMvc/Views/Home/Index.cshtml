@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        #message_box {
+            height: 400px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul id="message_box"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.0.min.js"></script>
+    @* 上述引入的两个文件的顺序不以交换，因为下面这个文件依赖于上面那个文件 *@
+    <script src="~/signalr/hubs"></script>
+    <!-- 本地没有，动态生成 -->
+    <script>
+        //下面是客户端操作
+        $(function () {
+            var $messageBox = $('#message_box');
+            //客户端先与服务器连接起来，拿到服务器的代理操作对象
+            var hubConnection = $.connection.chatHub;
+            //注册客户端函数
+            hubConnection.client.receiveMessage = function (name, message) {
+                $messageBox.append('<li><b>' + name + '</b> say:' + message + '</li>')
+            }
+            //启动连接到服务器
+            $.connection.hub.start();
+            //$.connection.hub.start().done(function () {
+                
+            //});
+        });
+    </script>
+</body>
+</html>
